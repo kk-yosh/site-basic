@@ -33,11 +33,6 @@
         });
     });
 
-
-
-
-
-
 // 関数
 // active付けはずし
 function addActive(addContents) {
@@ -77,5 +72,55 @@ function closeMdl(dialog) {
     );
 }
 
+// お問い合わせ フォーム
+    const contactForm = document.querySelector("#contactForm");
+    const msgArea = document.querySelector(".message_area")
+    const charCount = document.querySelector(".charCount span");
+    //エラーメッセージなど
+    const emailError = document.querySelector("#emailError");
+    const formSuccess = document.querySelector(".form_success");
+
+    //textareaの文字数表示
+    msgArea.addEventListener('input', () =>{
+        const currentTxtLength = msgArea.value.length;
+        const maxLength = msgArea.getAttribute("maxlength");
+
+        charCount.textContent = maxLength - currentTxtLength ;
+    });
+    
+    // 処理
+    contactForm.addEventListener("submit", (event) => {
+        // まだ送信しない
+        event.preventDefault();
+
+        // フォームデータ
+        const contactData = new FormData(contactForm);
+        // const userName = contactData.get("name");
+        const email = contactData.get("email");
+        // const message = contactData.get("message");
+
+        // チェック用
+        const emailCheck = /^[a-zA-Z0-9_+-]+(\.[a-zA-Z0-9_+-]+)*@([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\.)+[a-zA-Z]{2,}$/;
+        let isValid = true;
+
+        // チェック
+        if(!emailCheck || !emailCheck.test(email)) {
+            emailError.textContent = "項目が空欄か、無効な形式です";
+            isValid = false;
+        } else {
+            emailError.textContent = '';
+        }
+        if (isValid) {
+            openMdl(formSuccess);
+            contactForm.reset();
+        }
+    });
+
+    // 送信完了のモーダル
+    const clsSucMdlBtn = document.querySelector('.form_success div button');
+
+    clsSucMdlBtn.addEventListener('click', () => {
+        closeMdl(formSuccess);
+    });
 
 
