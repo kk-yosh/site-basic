@@ -35,7 +35,37 @@
         </div>
     </div>
 </section>
+<section id="contact">
+    <div class="sec_inner">
+        <h2>お問い合わせ</h2>
+        <form id="contactForm" action="#" method="post">
+            <p>
+                <label for="name">お名前（必須）</label><br>
+                <input type="text" name="name" id="name" required>
+                <span class="form_alart" id="nameError"></span>
+            </p>
+            <p>
+                <label for="email">メールアドレス（必須）</label><br>
+                <input type="email" name="email" required>
+                <span class="form_alart" id="emailError"></span>
+            </p>
+            <p>
+                <label for="message">お問い合わせ内容（必須）</label><br>
+                <textarea name="message" class="message_area" maxlength="200" required></textarea>
+                <p class="charCount">残り<span>200</span>文字</p>
+            </p>
+            <button type="submit">送信</button>
 
+        </form>
+        <dialog class="form_success">
+            <div>
+                <p>送信完了しました</p>
+                <button>閉じる</button>
+            </div>
+        </dialog>
+    </div>
+    <!-- sec_inner -->
+</section>
 <script src="script.js"></script>
 </body>
 </html>
