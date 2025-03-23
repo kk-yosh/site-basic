@@ -112,6 +112,7 @@ function closeMdl(dialog) {
         }
         if (isValid) {
             openMdl(formSuccess);
+            addActive(formSuccess);
             contactForm.reset();
         }
     });
@@ -121,6 +122,7 @@ function closeMdl(dialog) {
 
     clsSucMdlBtn.addEventListener('click', () => {
         closeMdl(formSuccess);
+        removeActive(formSuccess);
     });
 
 
