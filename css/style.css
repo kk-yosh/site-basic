@@ -47,7 +47,7 @@ h2 {
     width: 80%;
     height: 80%;
     padding: 20px;
-    background: rgba(0 0 0 0.5);
+    background: rgba(0, 0, 0, 0.5);
 }
 
 @keyframes fadeIn {
@@ -93,7 +93,38 @@ details {
     margin-bottom: 20px;
 }
 
+/* form *******************************
+*************************************/
+#contact .sec_inner {
+    width: 100%;
+}
+.form_success {
+    position: fixed;
+        top: 0;
+        left: 0;
+    display: none;
+    width: 100vw;
+    height: 100vh;
+}
+.form_success div {
+    height: max-content;
+    text-align: center;
+    color: #fff;
+}
+.form_success div button {
+    background: olive;
+    color: #fff;
 
+}
+.form_success.active {
+    display: block flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-content: center;
+    padding: 2em;
+    background: rgba(0 0 0 0.5);
+}
 
 
 
