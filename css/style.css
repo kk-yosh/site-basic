@@ -1,0 +1,108 @@
+@charset "utf-8";
+@import url(reset.css);
+
+* {
+    box-sizing: border-box;
+}
+section {
+    margin: 80px auto;
+}
+button, summary {
+    cursor: pointer;
+}
+summary::-webkit-details-marker {
+    display: none;
+}
+h2 {
+    font-size: 20px;
+    margin-bottom: 1em;
+    font-weight: bold;
+}
+/* modal *******************************
+*************************************/
+.fadeIn {
+    animation: fadeIn 1s ease-in-out;
+}
+.fadeOut {
+    animation: fadeOut 1s ease-in-out; 
+}
+.modal {
+    display: none;
+    position: fixed;
+        top: 0;
+        left: 0;
+    width: 100vw;
+    height: 100vw;
+    justify-content: center;
+    align-items: center;
+}
+.modal.active {
+    display:  block flex;
+}
+.modal_inner {
+    display:  block flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    width: 80%;
+    height: 80%;
+    padding: 20px;
+    background: rgba(0 0 0 0.5);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    } to {
+        opacity: 0;
+    }
+}
+/* tab *******************************
+*************************************/
+.tab_btn-wrap {
+    padding-bottom: 1em;
+}
+.tab_button {
+    padding: .25em .5em;
+    background: olive;
+    cursor: pointer;
+}
+.tab_button.active {
+    background: tomato;
+} 
+.tab_content {
+    display: none;
+}
+.tab_content.active {
+    display:  block flow;
+}
+
+/* accordion *******************************
+*************************************/
+.acc_wrap {
+    margin-bottom: -20px;
+}
+details {
+    margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
