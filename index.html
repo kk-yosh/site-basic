@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>サイト制作用</title>
+</head>
+<body>
+<h1>サイト制作用</h1>
+<section id="modal_content">
+    <h2>モーダル</h2>
+    <button id="openModal">Open Modal</button>
+
+    <dialog id="modal" class="modal">
+      <div class="modal_inner">
+          <p>モーダルの内容</p>
+          <button id="closeModal">Close Modal</button>
+      </div>
+    </dialog>
+</section>
+
+<section id="tab">
+    <h2>tab切り替え</h2>
+    <div class="tab_wrap">
+        <div class="tab_btn-wrap">
+            <span class="tab_button active">Tab 1</span>
+            <span class="tab_button">Tab 2</span>
+            <span class="tab_button">Tab 3</span>
+        </div>
+        <div class="tab_content-wrap">
+            <div class="tab_content active">Content for Tab 1</div>
+            <div class="tab_content">Content for Tab 2</div>
+            <div class="tab_content">Content for Tab 3</div>
+        </div>
+    </div>
+</section>
+
+<section id="accordion_details">
+    <div class="acc_wrap">
+        <details class="qa">
+            <summary class="qa_question">・質問1</summary>
+            <div class="qa_answer">
+                <div class="qa_ans-inner">
+                回答1回答1回答1回答1回答1回答1回答1回答1回答1回答1回答1
+                </div>
+            </div>
+        </details>
+        <details class="qa">
+            <summary class="qa_question">・質問2</summary>
+            <div class="qa_answer">
+                <div class="qa_ans-inner">
+                    回答2回答2回答2回答2回答2回答2回答2回答2回答2回答2回答2回答2
+                </div>
+            </div>
+        </details>
+        <details class="qa">
+            <summary class="qa_question">・質問3</summary>
+            <div class="qa_answer">
+                <div class="qa_ans-inner">
+                    回答3回答3回答3回答3回答3回答3回答3回答3回答3回答3回答3回答3回答3回答3回答3
+                </div>
+            </div>
+        </details>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="sec_inner">
+        <h2>お問い合わせ</h2>
+        <form id="contactForm" action="#" method="post">
+            <p>
+                <label for="name">お名前（必須）</label><br>
+                <input type="text" name="name" id="name" required>
+                <span class="form_alart" id="nameError"></span>
+            </p>
+            <p>
+                <label for="email">メールアドレス（必須）</label><br>
+                <input type="email" name="email" required>
+                <span class="form_alart" id="emailError"></span>
+            </p>
+            <p>
+                <label for="message">お問い合わせ内容（必須）</label><br>
+                <textarea name="message" class="message_area" maxlength="200" required></textarea>
+                <p class="charCount">残り<span>200</span>文字</p>
+            </p>
+            <button type="submit">送信</button>
+
+        </form>
+        <div class="form_success">
+            <div>
+                <p>送信完了しました</p>
+                <button>閉じる</button>
+            </div>
+        </div>
+    </div>
+    <!-- sec_inner -->
+    <style>
+        #contact .sec_inner {
+            width: 100%;
+        }
+        .form_success {
+            position: fixed;
+                top: 0;
+                left: 0;
+            display: none;
+            width: 100vw;
+            height: 100vh;
+        }
+        .form_success div {
+            height: max-content;
+            text-align: center;
+            color: #fff;
+        }
+        .form_success div button {
+            background: olive;
+            color: #fff;
+
+        }
+        .form_success.active {
+            display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                justify-content: center;
+                align-content: center;
+            padding: 2em;
+            background: rgba(0,0,0,0.5);
+        }
+    </style>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
