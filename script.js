@@ -95,9 +95,7 @@ function closeMdl(dialog) {
 
         // フォームデータ
         const contactData = new FormData(contactForm);
-        // const userName = contactData.get("name");
         const email = contactData.get("email");
-        // const message = contactData.get("message");
 
         // チェック用
         const emailCheck = /^[a-zA-Z0-9_+-]+(\.[a-zA-Z0-9_+-]+)*@([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\.)+[a-zA-Z]{2,}$/;
